@@ -1,0 +1,42 @@
+name: master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: Test on node ${{ matrix.node }} and ${{ matrix.os }}
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node: [8, 10, 12]
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macOS-latest
+
+    steps:
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+        env:
+          CI: true
+      - name: check-types, cover
+        if: success()
+        run: npm run check-types && npm test -- --coverage || cat coverage/lcov.info
+        env:
+          CI: true
+      - run: npm run build
+        if: success()
+      - name: upload coverage report
+        if: success()
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: npx codecov -f coverage/lcov.info
