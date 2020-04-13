@@ -1,11 +1,12 @@
+import Cell from 'abstract/Cell'
+import Control from 'abstract/Control'
+import Fruit from 'abstract/Fruit'
+import NPC from 'abstract/NPC'
+import User from 'abstract/User'
 import { Coord, Speed } from 'abstract/Types'
 import { Dispatch } from 'react'
-import NPC from 'abstract/NPC'
-import Fruit from 'abstract/Fruit'
-import User from 'abstract/User'
-import Cell from 'abstract/Cell'
-import { Status } from 'abstract/Types'
 import { findEmptyCell } from 'algorythms/cells'
+import { Status } from 'abstract/Types'
 
 export default class GameData {
 	// STATE
@@ -26,6 +27,7 @@ export default class GameData {
 	public user: User
 	public fruit: Fruit = new Fruit()
 	private refresh: Dispatch<number>
+	private control: Control
 
 	constructor(gridSize?: Coord, refresh?: Dispatch<number>) {
 		this.gridSize = gridSize ? gridSize : this.gridSize
@@ -41,6 +43,10 @@ export default class GameData {
 		}
 
 		this.user = new User(-1, this.center, this)
+		this.control = new Control(this.user)
+
+		// eslint-disable-next-line no-console
+		console.log(this.control)
 		this.resetFruit()
 
 		this.frame()
@@ -61,6 +67,12 @@ export default class GameData {
 	public resetFruit(): GameData {
 		const empty: Cell | null = findEmptyCell(this.grid) || null
 		if (empty) this.fruit.reset(empty)
+
+		return this
+	}
+
+	public pause(): GameData {
+		this.running = !this.running
 
 		return this
 	}
