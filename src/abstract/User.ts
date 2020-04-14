@@ -21,19 +21,29 @@ export default class User extends Snake {
 		this.game.resetFruit()
 	}
 
-	public up() {
+	public up(): void {
 		if (Dir.TOP !== OpositeDir[this.dir]) this.dir = Dir.TOP
 	}
 
-	public down() {
+	public down(): void {
 		if (Dir.BOTTOM !== OpositeDir[this.dir]) this.dir = Dir.BOTTOM
 	}
 
-	public left() {
+	public left(): void {
 		if (Dir.LEFT !== OpositeDir[this.dir]) this.dir = Dir.LEFT
 	}
 
-	public right() {
+	public right(): void {
 		if (Dir.RIGHT !== OpositeDir[this.dir]) this.dir = Dir.RIGHT
+	}
+
+	public reset(head?: Cell | null): void {
+		const newHead: Cell = head || this.cells[0]
+		this.die()
+		this.cells = [newHead]
+		this.length = 3
+		this.alive = true
+		this.dir = Dir.TOP
+		this.score = 0
 	}
 }

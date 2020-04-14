@@ -5,6 +5,7 @@ import Cell from 'abstract/Cell'
 export default abstract class Snake {
 	public alive: boolean = true
 	public length: number = 3
+	public score: number = 0
 	protected cells: Cell[] = []
 
 	constructor(
@@ -42,6 +43,11 @@ export default abstract class Snake {
 		return this
 	}
 
+	public remove(): void {
+		this.cells.forEach((cell: Cell) => (cell.status = Status.OFF))
+		this.alive = false
+	}
+
 	public get head(): Coord {
 		return this.cells[0].coord
 	}
@@ -53,8 +59,9 @@ export default abstract class Snake {
 	protected abstract getNext(): Cell | null
 	protected abstract fruitEaten(): void
 
-	private die() {
+	protected die() {
 		this.alive = false
 		this.cells.forEach(cell => (cell.status = Status.DEAD))
+		this.cells = []
 	}
 }

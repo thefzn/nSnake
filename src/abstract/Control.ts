@@ -7,7 +7,7 @@ export default class Control {
 		)
 	}
 
-	public keyPressed(e: string) {
+	public keyPressed(e: string): void {
 		switch (e) {
 			case 'ArrowUp':
 				this.user.up()

@@ -30,3 +30,16 @@ export enum Dir {
 }
 
 export const OpositeDir: number[] = [2, 3, 0, 1]
+
+export type Controller = {
+	up: () => void | undefined
+	down: () => void | undefined
+	left: () => void | undefined
+	right: () => void | undefined
+	resetUser: () => void | undefined
+	resetGame: () => void | undefined
+	addSnake: () => void | undefined
+	addKiller: () => void | undefined
+	removeSnake: () => void | undefined
+	pause: () => void | undefined
+}

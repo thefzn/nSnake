@@ -3,10 +3,9 @@ import Control from 'abstract/Control'
 import Fruit from 'abstract/Fruit'
 import NPC from 'abstract/NPC'
 import User from 'abstract/User'
-import { Coord, Speed } from 'abstract/Types'
+import { Controller, Coord, Speed, Status } from 'abstract/Types'
 import { Dispatch } from 'react'
 import { findEmptyCell } from 'algorythms/cells'
-import { Status } from 'abstract/Types'
 
 export default class GameData {
 	// STATE
@@ -74,6 +73,8 @@ export default class GameData {
 	public pause(): GameData {
 		this.running = !this.running
 
+		if (this.running) this.frame()
+
 		return this
 	}
 
@@ -91,5 +92,42 @@ export default class GameData {
 		}, this.speed)
 
 		return this
+	}
+
+	public resetUser(): void {
+		const newHead: Cell | null = findEmptyCell(this.grid, true)
+		this.user.reset(newHead)
+	}
+	public reset(): void {
+		const toRemove: NPC | undefined = this.npcs.pop()
+		if (toRemove) toRemove.remove()
+	}
+	public removeSnake(): void {
+		while (this.npcs.length) {
+			const toRemove: NPC | undefined = this.npcs.pop()
+			if (toRemove) toRemove.remove()
+		}
+		this.user.reset()
+	}
+
+	public getControls(): Controller {
+		return {
+			up: () => this.user.up(),
+			down: () => this.user.down(),
+			left: () => this.user.left(),
+			right: () => this.user.right(),
+			resetUser: () => this.resetUser(),
+			resetGame: () => this.reset(),
+			addSnake: () => {
+				this.addSnake()
+			},
+			addKiller: () => {
+				this.addSnake(undefined, true)
+			},
+			removeSnake: () => this.removeSnake(),
+			pause: () => {
+				this.pause()
+			},
+		}
 	}
 }

@@ -4,8 +4,8 @@ import SIZE from 'atoms/sizes.json'
 import TIME from 'atoms/time.json'
 
 const cell = styled.div`
-	border-right: 1px solid rgb(${COLOR.MAIN});
-	border-bottom: 1px solid rgb(${COLOR.MAIN});
+	border-right: 1px solid rgba(${COLOR.GREY}, 0.5);
+	border-bottom: 1px solid rgba(${COLOR.GREY}, 0.5);
 	box-sizing: border-box;
 	display: block;
 	height: ${SIZE.MD};
@@ -18,22 +18,22 @@ const cell = styled.div`
 		display: block;
 		height: ${SIZE.MD};
 		left: 0;
+		opacity: 0;
 		position: absolute;
 		top: 0;
-		transition: background-color ${TIME.XS}, box-shadow ${TIME.XS},
-			transform ${TIME.XS};
-		opacity: 0;
+		transition: ${TIME.XL};
 		width: ${SIZE.MD};
 	}
 	&.cell--active {
 		&:before {
-			animation-duration: ${TIME.LG};
+			/* animation-duration: ${TIME.LG};
 			animation-iteration-count: infinite;
 			animation-name: pulse;
-			animation-timing-function: ease-in-out;
+			animation-timing-function: ease-in-out; */
 			box-shadow: ${SIZE.XS} ${SIZE.XS} ${SIZE.XS} 0 rgba(${COLOR.MAIN}, 0.1);
 			opacity: 1;
 			transform: translate(-${SIZE.XS}, -${SIZE.XS});
+			transition: none;
 		}
 	}
 
@@ -42,6 +42,7 @@ const cell = styled.div`
 	}
 	&.--fruit:before {
 		background-color: rgba(${COLOR.PURPLE}, 1);
+		box-shadow: ${SIZE.XS} ${SIZE.XS} ${SIZE.XS} 0 rgba(${COLOR.PURPLE}, 0.1);
 	}
 	&.--dead:before {
 		background-color: rgba(${COLOR.GREY}, 1);
