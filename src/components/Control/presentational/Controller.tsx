@@ -5,7 +5,7 @@ const Controller = styled.div`
 	border-radius: 10px;
 	bottom: 5%;
 	box-shadow: inset -1px -1px 2px #92928f, inset 1px 1px 2px #efefef,
-		4px 4px 4px #676767, 8px 8px 15px #d0cfd5;
+		6px 6px 4px rgba(185, 68, 0, 0.3), 14px 14px 20px rgb(185, 68, 0);
 	display: flex;
 	height: 150px;
 	justify-content: center;
