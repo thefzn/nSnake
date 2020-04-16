@@ -98,11 +98,11 @@ export default class GameData {
 		const newHead: Cell | null = findEmptyCell(this.grid, true)
 		this.user.reset(newHead)
 	}
-	public reset(): void {
+	public removeSnake(): void {
 		const toRemove: NPC | undefined = this.npcs.pop()
 		if (toRemove) toRemove.remove()
 	}
-	public removeSnake(): void {
+	public reset(): void {
 		while (this.npcs.length) {
 			const toRemove: NPC | undefined = this.npcs.pop()
 			if (toRemove) toRemove.remove()

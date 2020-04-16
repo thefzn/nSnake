@@ -16,7 +16,7 @@ const MainControlWrapper = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	width: 100px;
+	width: 135px;
 `
 
 export default MainControlWrapper

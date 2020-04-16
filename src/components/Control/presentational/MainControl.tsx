@@ -4,7 +4,7 @@ import GreyArea from './GreyArea'
 import MainControlWrapper from './MainControlWrapper'
 import { Controller } from 'abstract/Types'
 
-const MainControl: FC<Partial<Controller>> = ({ pause, removeSnake }) => (
+const MainControl: FC<Partial<Controller>> = ({ pause, resetGame }) => (
 	<MainControlWrapper>
 		<GreyArea />
 		<GreyArea />
@@ -13,7 +13,7 @@ const MainControl: FC<Partial<Controller>> = ({ pause, removeSnake }) => (
 			<span>Start</span>
 		</GreyArea>
 		<GreyArea className="--buttons">
-			<Button onClick={() => removeSnake && removeSnake()} />
+			<Button onClick={() => resetGame && resetGame()} />
 			<Button onClick={() => pause && pause()} />
 		</GreyArea>
 		<GreyArea />

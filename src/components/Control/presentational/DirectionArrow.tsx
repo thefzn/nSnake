@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
 import Arrow from './Arrow'
 import Center from './Center'
-import Pad from './Pad'
+import SVGPad from './SVGPad'
+import SVGArrow from './SVGArrow'
 
 type ArrowProps = {
 	up?: boolean
@@ -26,9 +27,11 @@ const DirectionArrow: FC<ArrowProps> = ({
 	return center ? (
 		<Center className="--center" />
 	) : pad ? (
-		<Pad className="--pad" />
+		<SVGPad className="--pad" />
 	) : (
-		<Arrow className={style} {...props} />
+		<Arrow className={style} {...props}>
+			<SVGArrow up={up} down={down} left={left} right={right} />
+		</Arrow>
 	)
 }
 

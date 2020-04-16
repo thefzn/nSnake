@@ -1,26 +1,12 @@
 import React, { FC } from 'react'
 
-const Pad: FC<{ className: string }> = ({ className }) => (
+const SVGPad: FC<{ className: string }> = ({ className }) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		version="1.1"
 		className={className}
 		viewBox="-5 -8 170 170"
 	>
-		<defs>
-			<linearGradient id="gradient" gradientTransform="rotate(75)">
-				<stop offset="35%" stopColor="#252525"></stop>
-				<stop offset="99%" stopColor="#626262"></stop>
-			</linearGradient>
-			<filter id="dropshadow">
-				<feDropShadow
-					dx="3"
-					dy="3"
-					stdDeviation="6"
-					floodColor="#141414"
-				></feDropShadow>
-			</filter>
-		</defs>
 		<path
 			d="m 64.721094,0.7740300000000389 c -6.061478,0 -10.982986,4.79589 -10.931691,10.73463 l 0,41.07378 -41.547455,0 c -6.0614767,0 -10.9316832,4.77176 -10.9316832,10.7107 l 0,30.62605 c 0,5.93896 4.8702065,10.71073 10.9316832,10.71073 l 41.547455,0 0,39.9979 c 0,5.939 4.870213,10.7347 10.931691,10.7347 l 31.257797,0 c 6.061499,0 10.879019,-4.7959 10.931699,-10.7347 l 0,-39.9979 41.19662,0 c 6.06148,0 10.95609,-4.77177 10.95609,-10.71073 l 0,-30.62605 c 0,-5.93894 -4.89461,-10.7107 -10.95609,-10.7107 l -41.19662,0 0,-41.07378 c 0,-5.93896 -4.8702,-10.73463 -10.931699,-10.73463 z"
 			stroke="#d0cfd5"
@@ -37,4 +23,4 @@ const Pad: FC<{ className: string }> = ({ className }) => (
 	</svg>
 )
 
-export default Pad
+export default SVGPad
