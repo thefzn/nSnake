@@ -48,8 +48,8 @@ export default abstract class Snake {
 		this.alive = false
 	}
 
-	public get head(): Coord {
-		return this.cells[0].coord
+	public get head(): Coord | null {
+		return this.cells[0]?.coord
 	}
 
 	public get tail(): Coord {

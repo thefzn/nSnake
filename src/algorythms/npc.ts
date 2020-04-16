@@ -5,9 +5,10 @@ import { getDelta, getClosestTo } from 'algorythms/math'
 import { getNextCell, cellIsAlive } from 'algorythms/cells'
 
 function npc(game: GameData, pos: Coord, hard: boolean): Cell | null {
-	const target: Coord = hard
-		? getClosestTo(pos, game.fruit.coord, game.user.head)
-		: game.fruit.coord
+	const target: Coord =
+		hard && game.user.head
+			? getClosestTo(pos, game.fruit.coord, game.user.head)
+			: game.fruit.coord
 	const [xC, yC]: Coord = game.center
 	const [xD, yD]: Coord = getDelta(target, pos)
 	const [xDA, yDA]: Coord = [Math.abs(xD), Math.abs(yD)]

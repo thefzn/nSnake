@@ -2,7 +2,7 @@ import Cell from 'abstract/Cell'
 import GameData from 'abstract/GameData'
 import Snake from 'abstract/Snake'
 import { Coord, Dir, Status, OpositeDir } from 'abstract/Types'
-import { getNextCell } from 'algorythms/cells'
+import { getNextCell, findEmptyCell } from 'algorythms/cells'
 
 export default class User extends Snake {
 	private game: GameData
@@ -14,7 +14,7 @@ export default class User extends Snake {
 	}
 
 	protected getNext(): Cell | null {
-		return getNextCell(this.head, this.dir, this.game)
+		return this.head ? getNextCell(this.head, this.dir, this.game) : null
 	}
 
 	protected fruitEaten(): void {
@@ -38,7 +38,8 @@ export default class User extends Snake {
 	}
 
 	public reset(head?: Cell | null): void {
-		const newHead: Cell = head || this.cells[0]
+		const newHead: Cell =
+			head || this.cells[0] || findEmptyCell(this.game.grid, true)
 		this.die()
 		this.cells = [newHead]
 		this.length = 3

@@ -47,7 +47,7 @@ export default class NPC extends Snake {
 	}
 
 	protected getNext(): Cell | null {
-		return npc(this.game, this.head, this.isHard)
+		return this.head ? npc(this.game, this.head, this.isHard) : null
 	}
 
 	protected fruitEaten(): void {
