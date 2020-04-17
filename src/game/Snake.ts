@@ -1,6 +1,6 @@
-import { Coord, Status } from 'abstract/Types'
-import { cellIsAlive } from 'algorythms/cells'
-import Cell from 'abstract/Cell'
+import { Coord, Status } from 'game/Types'
+import { cellIsAlive } from 'game/algorythms/cells'
+import Cell from 'game/Cell'
 
 export default abstract class Snake {
 	public alive: boolean = true

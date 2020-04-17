@@ -1,4 +1,4 @@
-import User from 'abstract/User'
+import User from 'game/User'
 
 export default class Control {
 	constructor(private user: User) {

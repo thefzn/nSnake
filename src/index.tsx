@@ -2,13 +2,8 @@ import React from 'react'
 import 'react-app-polyfill/ie11'
 import 'react-app-polyfill/stable'
 import ReactDOM from 'react-dom'
-import Game from 'components/Game'
+import Game from 'components/templates/Game'
 import './index.css'
-
-// import RootActions from 'actions'
-// import Providers from 'components/Providers'
-// import configureStore from 'store/configureStore'
-// import RootState from 'store/RootState'
 
 const dependencyPath: string = './components/Game'
 

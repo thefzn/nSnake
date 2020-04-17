@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import Arrow from './Arrow'
-import Center from './Center'
-import SVGPad from './SVGPad'
-import SVGArrow from './SVGArrow'
+import Arrow from 'components/atoms/Arrow'
+import Center from 'components/atoms/Center'
+import SVGPad from 'components/atoms/SVGPad'
+import SVGArrow from 'components/atoms/SVGArrow'
 
 type ArrowProps = {
 	up?: boolean

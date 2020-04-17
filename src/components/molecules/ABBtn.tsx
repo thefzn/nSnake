@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import ABBtnInner from './ABBtnInner'
-import ABBtnOuter from './ABBtnOuter'
+import ABBtnInner from 'components/atoms/ABBtnInner'
+import ABBtnOuter from 'components/atoms/ABBtnOuter'
 
 type Button = { action?: () => void; label: 'A' | 'B' }
 

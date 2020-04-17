@@ -1,5 +1,5 @@
-import { Status, Coord } from 'abstract/Types'
-import CellClasses from 'abstract/CellClasses.json'
+import { Status, Coord } from 'game/Types'
+import CellClasses from 'game/CellClasses.json'
 
 export default class Cell {
 	public id: string

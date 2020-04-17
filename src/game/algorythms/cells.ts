@@ -1,7 +1,7 @@
-import { Coord, Dir, Status } from 'abstract/Types'
-import GameData from 'abstract/GameData'
-import Cell from 'abstract/Cell'
-import { getDistance, getRandom } from 'algorythms/math'
+import { Coord, Dir, Status } from 'game/Types'
+import GameData from 'game/GameData'
+import Cell from 'game/Cell'
+import { getDistance, getRandom } from 'game/algorythms/math'
 
 export function findEmptyCell(
 	grid: Cell[][],

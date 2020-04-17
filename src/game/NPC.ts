@@ -1,8 +1,8 @@
-import Cell from 'abstract/Cell'
-import GameData from 'abstract/GameData'
-import Snake from 'abstract/Snake'
-import { Coord, Status } from 'abstract/Types'
-import { npc } from 'algorythms'
+import Cell from 'game/Cell'
+import GameData from 'game/GameData'
+import Snake from 'game/Snake'
+import { Coord, Status } from 'game/Types'
+import { npc } from 'game/algorythms'
 
 export default class NPC extends Snake {
 	private isHard: boolean

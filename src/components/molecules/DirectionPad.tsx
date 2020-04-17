@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import DirectionPadWrapper from './DirectionPadWrapper'
-import DirectionArrow from './DirectionArrow'
-import { Controller } from 'abstract/Types'
+import DirectionPadWrapper from 'components/atoms/DirectionPadWrapper'
+import DirectionArrow from 'components/molecules/DirectionArrow'
+import { Controller } from 'game/Types'
 
 const Control: FC<Partial<Controller>> = ({ up, right, down, left }) => (
 	<DirectionPadWrapper>

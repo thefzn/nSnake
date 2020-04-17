@@ -1,4 +1,4 @@
-import { Coord } from 'abstract/Types'
+import { Coord } from 'game/Types'
 
 export function getDelta([x1, y1]: Coord, [x2, y2]: Coord): Coord {
 	return [x1 - x2, y1 - y2]

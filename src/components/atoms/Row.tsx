@@ -1,5 +1,5 @@
 import { styled } from 'linaria/react'
-import TIME from 'atoms/time.json'
+import TIME from 'components/abstract/time.json'
 
 const row = styled.div`
 	/* &:nth-child(5n) .cell--active {

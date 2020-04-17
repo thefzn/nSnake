@@ -1,8 +1,8 @@
-import Cell from 'abstract/Cell'
-import GameData from 'abstract/GameData'
-import Snake from 'abstract/Snake'
-import { Coord, Dir, Status, OpositeDir } from 'abstract/Types'
-import { getNextCell, findEmptyCell } from 'algorythms/cells'
+import Cell from 'game/Cell'
+import GameData from 'game/GameData'
+import Snake from 'game/Snake'
+import { Coord, Dir, Status, OpositeDir } from 'game/Types'
+import { getNextCell, findEmptyCell } from 'game/algorythms/cells'
 
 export default class User extends Snake {
 	private game: GameData

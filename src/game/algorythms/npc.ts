@@ -1,8 +1,8 @@
-import GameData from 'abstract/GameData'
-import Cell from 'abstract/Cell'
-import { Dir, Coord, OpositeDir } from 'abstract/Types'
-import { getDelta, getClosestTo } from 'algorythms/math'
-import { getNextCell, cellIsAlive } from 'algorythms/cells'
+import GameData from 'game/GameData'
+import Cell from 'game/Cell'
+import { Dir, Coord, OpositeDir } from 'game/Types'
+import { getDelta, getClosestTo } from 'game/algorythms/math'
+import { getNextCell, cellIsAlive } from 'game/algorythms/cells'
 
 function npc(game: GameData, pos: Coord, hard: boolean): Cell | null {
 	const target: Coord =

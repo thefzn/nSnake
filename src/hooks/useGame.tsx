@@ -1,6 +1,6 @@
 import { useState, Dispatch } from 'react'
-import GameData from 'abstract/GameData'
-import { Coord } from 'abstract/Types'
+import GameData from 'game/GameData'
+import { Coord } from 'game/Types'
 
 let theGame: GameData
 

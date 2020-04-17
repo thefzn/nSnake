@@ -1,7 +1,7 @@
 import { styled } from 'linaria/react'
-import COLOR from 'atoms/colors.json'
-import SIZE from 'atoms/sizes.json'
-import TIME from 'atoms/time.json'
+import COLOR from 'components/abstract/colors.json'
+import SIZE from 'components/abstract/sizes.json'
+import TIME from 'components/abstract/time.json'
 
 const cell = styled.div`
 	border-right: 1px solid rgba(${COLOR.GREY}, 0.5);

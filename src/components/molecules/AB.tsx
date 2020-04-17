@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import ABWrapper from './ABWrapper'
-import ABBtn from './ABBtn'
-import { Controller } from 'abstract/Types'
+import ABWrapper from 'components/atoms/ABWrapper'
+import ABBtn from 'components/molecules/ABBtn'
+import { Controller } from 'game/Types'
 
 const AB: FC<Partial<Controller>> = ({ addSnake, addKiller }) => (
 	<ABWrapper>

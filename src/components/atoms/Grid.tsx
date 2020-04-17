@@ -1,5 +1,5 @@
 import { styled } from 'linaria/react'
-import COLOR from './colors.json'
+import COLOR from 'components/abstract/colors.json'
 
 const grid = styled.div`
 	background-color: rgb(${COLOR.WHITE});

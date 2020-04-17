@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import Button from './Button'
-import GreyArea from './GreyArea'
-import MainControlWrapper from './MainControlWrapper'
-import { Controller } from 'abstract/Types'
+import Button from 'components/atoms/Button'
+import GreyArea from 'components/atoms/GreyArea'
+import MainControlWrapper from 'components/atoms/MainControlWrapper'
+import { Controller } from 'game/Types'
 
 const MainControl: FC<Partial<Controller>> = ({ pause, resetGame }) => (
 	<MainControlWrapper>

@@ -1,5 +1,5 @@
-import Cell from 'abstract/Cell'
-import { Status, Coord } from 'abstract/Types'
+import Cell from 'game/Cell'
+import { Status, Coord } from 'game/Types'
 
 export default class Fruit {
 	private cell?: Cell

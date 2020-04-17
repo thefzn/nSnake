@@ -1,11 +1,11 @@
-import Cell from 'abstract/Cell'
-import Control from 'abstract/Control'
-import Fruit from 'abstract/Fruit'
-import NPC from 'abstract/NPC'
-import User from 'abstract/User'
-import { Controller, Coord, Speed, Status } from 'abstract/Types'
+import Cell from 'game/Cell'
+import Control from 'game/Control'
+import Fruit from 'game/Fruit'
+import NPC from 'game/NPC'
+import User from 'game/User'
+import { Controller, Coord, Speed, Status } from 'game/Types'
 import { Dispatch } from 'react'
-import { findEmptyCell } from 'algorythms/cells'
+import { findEmptyCell } from 'game/algorythms/cells'
 
 export default class GameData {
 	// STATE
